@@ -1,0 +1,55 @@
+<!doctype html />
+<html>
+
+<head>
+
+	<style>
+		body {
+			background: url(pole.jpeg) no-repeat center;
+			background-size: cover;
+		}
+		.ball {
+			
+			height: 100px;
+			width: 100px;
+			background: url(ball.png) no-repeat center ;
+			background-size: 100%;
+			position: absolute;
+			left: 300px;
+			top: 300px;
+			transition: all 0.3s ease-in-out;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Создать html-страницу с футбольным полем, которое зани-
+мает всю ширину и высоту экрана, и мячом размером 100 на 100
+пикселей.
+Сделать так, чтобы при клике мышкой по полю, мяч плавно
+перемещался на место клика. Учтите: необходимо, чтобы центр
+мяча останавливался именно там, где был совершен клик мышкой. -->
+	
+	
+	
+	<div class="ball" id="ball"></div>
+
+
+
+	<script>
+		let x1;
+		let y1;
+		document.onmousedown = function (event) {
+			// console.log(event); // вывод в консоль
+			x1 = event.clientX;
+			y1 = event.clientY;
+			// console.log(x1, y1);
+			ball.style.left = x1 - 50;
+			ball.style.top = y1 - 50;
+		}
+	</script>
+
+
+</body>
+
+</html>

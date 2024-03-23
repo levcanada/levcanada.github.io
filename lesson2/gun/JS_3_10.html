@@ -1,0 +1,97 @@
+<!doctype html />
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Keyboard events</title>
+	<style>
+		body {
+			margin: 0;
+			position: relative;
+		}
+
+		#gun,
+		#bullet,
+		#aim {
+			position: absolute;
+		}
+
+		#bullet,
+		#aim {
+			border-radius: 50%;
+		}
+
+		#gun {
+			height: 120px;
+			left: 0;
+			top: 48px;
+			width: 241px;
+		}
+
+		#gun img {
+			width: 100%;
+			height: auto;
+		}
+
+		#bullet {
+			background: brown;
+			height: 20px;
+			left: 217px;
+			top: 61px;
+			width: 20px;
+			z-index: -1;
+		}
+
+		#aim {
+			background: red;
+			height: 70px;
+			left: 700px;
+			top: 37px;
+			width: 70px;
+		}
+	</style>
+</head>
+<!-- «выстрел из пушки».
+Предположим, что у нас есть некий объект-пушка и,
+на некотором расстоянии от нее, мишень. При нажатии
+клавиши «пробел» из пушки должен вылетать снаряд,
+пролетать до мишени и исчезнуть после попадания в нее -->
+<body onkeydown="keyHandler(event)">
+	<h1>Press space</h1>
+	<div id="gun"><img src="artillery.png" alt=""></div>
+	<div id="bullet"></div>
+	<div id="aim"></div>
+	<script>
+		var bulletX = 217;
+		var onFly = false;
+		
+		function moveBullet() {
+			if (onFly) {
+				bulletX += 5;
+				if (bulletX >= 700) {
+					bulletX = 217;
+					onFly = false;
+					aim.style.background = "black";
+				}
+				else {
+					setTimeout(moveBullet, 20);
+				}
+				bullet.style.left = bulletX + "px";
+			}
+		}
+		function keyHandler(e) {
+			console.log(e)
+			if (e.code == "Space" && !onFly) {
+				onFly = true;
+				moveBullet();
+			}
+			// if (e.code == "Escape" && onFly) {
+			// 	onFly = false;
+			// 	bulletX = 217;
+			// 	bullet.style.left = bulletX + "px";
+			// }
+		}
+	</script>
+</body>
+
+</html>

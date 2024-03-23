@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лев Канада</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
+        <span class="menu-btn">&equiv;</span>
+
+        <nav>
+            <a href="#" class="link">Главная</a>
+            <a href="#games" class="link">обо мне</a>
+            <a href="#streams" class="link">мои стримы</a>
+        </nav>
+
+        <a href="#" class="btn">Canada</a>
+
+
+
+
+
+    </header>
+
+
+
+    <main>
+        <div class="banner">
+
+
+            <h1>Я -гэймер</h1>
+            <p>Lorem ipsum dolor sit amet consectetu. <br>r adipisicing elit. Ex porro explicabo blanditiis mollitia
+                voluptas <br>
+                deleniti deserunt ad rerum, maiores sint quisquam architecto, <br> vero inventore quasi repellat? Hic
+                beatae
+                eveniet quia?</p>
+
+            <a href="#" class="btn">узнать детали</a>
+
+        </div>
+
+
+        <div class="games" id="games">
+
+            <h2>Мои любимые игры </h2>
+            <div class="boxes">
+
+                <div>
+                    <img src="IMG/war3.png" alt="" width="400">
+                    <span> 100 подписчиков</span>
+                </div>
+                <div>
+                    <img src="IMG/war1.jpg" alt="" width="400">
+                    <span> 100 подписчиков</span>
+                </div>
+                <div>
+                    <img src="IMG/war2.webp" width="400">
+                    <span> 100 подписчиков</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="streams" id="streams">
+            <h3>Подключайтесь к стримам</h3>
+            <div class="slider">
+                <img src="IMG/1.jpg" alt="">
+                <img src="IMG/2.jpeg" alt="">
+                <img src="IMG/3.jpeg" alt="">
+                <img src="IMG/4.jpg" alt="">
+                <img src="IMG/5.jpeg" alt="">
+                <img src="IMG/6.jpg" alt="">
+                <img src="IMG/7.jpg" alt="">
+                <img src="IMG/8.jpeg" alt="">
+
+            </div>
+
+
+    </main>
+
+    <footer>
+        <a href="#" target=" _blank">
+            <img src="IMG/1.svg" alt="">
+        </a>
+        <img src="IMG/2.svg" alt="">
+        </a>
+        <img src="IMG/3.svg" alt="">
+        </a>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+
+    <script>
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            responsive: [
+
+
+
+
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }
+
+            ]
+        });
+
+
+
+
+    </script>
+
+
+    <script>
+        $('.menu-btn').click(function () {
+         $('nav').toggleClass('open');
+        })
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+
+</html>
